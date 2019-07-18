@@ -19,18 +19,19 @@ add_subdirectory(utils)
 add_library(
         opengl_native
 
-    SHARED ${DIRSRCS}
+    SHARED
+        ${DIRSRCS}
 )
 
 
-#find_library( # Sets the name of the path variable.
-#        log-lib
-#        log)
+find_library( # Sets the name of the path variable.
+        log-lib
+        log)
 
 
 
 target_link_libraries( # Specifies the target library.
         opengl_native
-        shape
-        utils
-        GLESv3)
+        GLESv3
+        ${log-lib}
+        )

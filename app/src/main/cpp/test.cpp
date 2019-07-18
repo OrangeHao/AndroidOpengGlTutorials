@@ -72,26 +72,3 @@ void renderFrame() {
     glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
-
-extern "C"
-JNIEXPORT void JNICALL
-SHAPEJAVAPATH(init)(JNIEnv *env, jclass type, jint width, jint height) {
-    setupGraphics(width, height);
-}
-
-extern "C"
-JNIEXPORT void JNICALL
-SHAPEJAVAPATH(step)(JNIEnv *env, jclass type) {
-    renderFrame();
-}
-
-
-
-
-
-extern "C"
-JNIEXPORT jstring JNICALL
-SHAPEJAVAPATH(getTestString)(JNIEnv *env, jclass type) {
-    std::string hello = "hello world";
-    return env->NewStringUTF(hello.c_str());
-}
