@@ -1,7 +1,8 @@
-package com.orange.androidopenggltutorials.render.shape;
+package com.orange.androidopenggltutorials.render.shape.shapejni;
 
 
 import com.orange.androidopenggltutorials.render.BaseRender;
+import com.orange.androidopenggltutorials.render.shape.NativeLib;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;

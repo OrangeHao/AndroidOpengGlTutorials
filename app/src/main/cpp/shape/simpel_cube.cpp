@@ -116,8 +116,8 @@ bool setupCube(int width,int heigth){
 void renderCube(){
     LOGE("renderCube");
 
-    glClearColor(0.0f,0.0f,0.0f,1.0f);
-    glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
+//    glClearColor(0.0f,0.0f,0.0f,1.0f);
+//    glClear(GL_DEPTH_BUFFER_BIT|GL_COLOR_BUFFER_BIT);
 
     //初始化单位矩阵
     matrixIdentityFunction(modelViewMatrix);

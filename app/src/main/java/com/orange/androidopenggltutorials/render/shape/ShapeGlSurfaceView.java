@@ -26,7 +26,7 @@ public class ShapeGlSurfaceView extends GLSurfaceView {
         setEGLContextClientVersion(3);
         mRender=new ShapeWrapperRender(Triangle.class);
         setRenderer(mRender);
-        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+        setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
     }
 
     public void setShape(Class<? extends BaseRender> clazz){
