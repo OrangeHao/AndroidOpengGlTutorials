@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         initListener()
 
-        Log.d("czh","from native:"+ NativeLib.getTestString())
     }
 
 

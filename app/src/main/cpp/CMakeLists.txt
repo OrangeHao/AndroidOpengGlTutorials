@@ -20,7 +20,8 @@ add_library(
         opengl_native
 
     SHARED
-        ${DIRSRCS}
+    shape/simple_cube.cpp
+    shape/simple_triange.cpp
 )
 
 

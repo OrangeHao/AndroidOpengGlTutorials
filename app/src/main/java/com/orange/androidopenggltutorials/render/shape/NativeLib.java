@@ -9,7 +9,6 @@ public class NativeLib {
         System.loadLibrary("opengl_native");
     }
 
-    public static native String getTestString();
 
     public static native void init(int width,int height);
     public static native void step();

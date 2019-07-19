@@ -14,30 +14,29 @@
 #include <cstdlib>
 #include <cmath>
 
-#include "gltools.cpp"
 #include "matrix.cpp"
 
-using namespace gltools;
+#include "gltools.h"
 
 
-static const char glVertextShader[]=
-        "attribute vec4 vertexPosition;\n"
-        "attribute vec3 vertexColour;\n"
-        "varying vec3 fragColour;\n"
-        "uniform mat4 projection;\n"
-        "uniform mat4 modeView;\n"
-        "\n"
-        "void main() {\n"
-        "    gl_Position=projection*modeView*vertexPosition;\n"
-        "    fragColour=vertexColour;\n"
-        "}";
+const char glVertextShader[]=
+    "attribute vec4 vertexPosition;\n"
+    "attribute vec3 vertexColour;\n"
+    "varying vec3 fragColour;\n"
+    "uniform mat4 projection;\n"
+    "uniform mat4 modeView;\n"
+    "\n"
+    "void main() {\n"
+    "    gl_Position=projection*modeView*vertexPosition;\n"
+    "    fragColour=vertexColour;\n"
+    "}";
 
-static const char glFragmentShader[]=
-        "precision mediump float;\n"
-        "varying vec3 fragColour;\n"
-        "void main() {\n"
-        "    gl_FragColor=vec4(fragColour,1.0);\n"
-        "}";
+const char glFragmentShader[]=
+    "precision mediump float;\n"
+    "varying vec3 fragColour;\n"
+    "void main() {\n"
+    "    gl_FragColor=vec4(fragColour,1.0);\n"
+    "}";
 
 
 //定义了8个点
@@ -89,7 +88,7 @@ float angle = 0;
 
 bool setupCube(int width,int heigth){
     LOGE("setupCube");
-    simpleCubeProgram=gltools::createProgram(glVertextShader,glFragmentShader);
+    simpleCubeProgram=createProgram(glVertextShader,glFragmentShader);
 
     if(simpleCubeProgram==0){
         LOGE("could not create program");
