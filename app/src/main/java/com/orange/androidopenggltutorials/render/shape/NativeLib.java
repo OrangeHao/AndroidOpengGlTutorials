@@ -16,4 +16,9 @@ public class NativeLib {
 
     public static native void simpleCubeInit(int width,int height);
     public static native void simpleCubeRender();
+
+
+    public static native void textureCubeInit(int width,int height);
+    public static native void textureCubeRender();
+
 }

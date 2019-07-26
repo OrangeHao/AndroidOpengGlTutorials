@@ -17,6 +17,7 @@
     <string name="shape_selected">选择一个图形</string>
     <string name="shape_triangle">三角形</string>
     <string name="shape_cube">正方体</string>
+    <string name="shape_texture">纹理正方体</string>
 
 
 

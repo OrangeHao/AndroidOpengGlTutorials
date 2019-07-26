@@ -20,8 +20,10 @@ add_library(
         opengl_native
 
     SHARED
+        utils/matrix.cpp
     shape/simple_cube.cpp
     shape/simple_triange.cpp
+        shape/texture_cube.cpp
 )
 
 

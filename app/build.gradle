@@ -27,9 +27,9 @@ android {
                 // 设置标志来支持C++编译器的格式化宏常量。
                 cppFlags "-frtti -fexceptions", "-D__STDC_FORMAT_MACROS"
             }
-            ndk {
-                abiFilters "armeabi-v7a", "x86"
-            }
+//            ndk {
+//                abiFilters "armeabi-v7a", "x86"
+//            }
         }
     }
     buildTypes {
