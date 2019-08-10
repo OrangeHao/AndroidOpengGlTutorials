@@ -6,7 +6,7 @@ package com.orange.androidopenggltutorials.render.shape;
 public class NativeLib {
 
     static {
-        System.loadLibrary("opengl_native");
+        System.loadLibrary("shape");
     }
 
 
@@ -20,5 +20,8 @@ public class NativeLib {
 
     public static native void textureCubeInit(int width,int height);
     public static native void textureCubeRender();
+
+    public static native void lightingCubeInit(int width,int height);
+    public static native void lightingCubeRender();
 
 }

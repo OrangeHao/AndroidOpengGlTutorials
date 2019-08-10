@@ -18,6 +18,7 @@
     <string name="shape_triangle">三角形</string>
     <string name="shape_cube">正方体</string>
     <string name="shape_texture">纹理正方体</string>
+    <string name="shape_lighting_cube">光照正方体</string>
 
 
 

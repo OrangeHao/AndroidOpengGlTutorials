@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_shape.*
 import com.lxj.xpopup.XPopup
 import com.orange.androidopenggltutorials.R
 import com.orange.androidopenggltutorials.render.BaseRender
+import com.orange.androidopenggltutorials.render.shape.shapejni.LightingCubeJNI
 import com.orange.androidopenggltutorials.render.shape.shapejni.TextureCubeJNI
 import com.orange.androidopenggltutorials.render.shape.shapejni.TriangelJNI
 import java.security.AccessController.getContext
@@ -47,7 +48,7 @@ class ShapeActivity : AppCompatActivity() {
             .asBottomList(
                 getString(R.string.shape_selected), arrayOf(getString(R.string.shape_triangle),
                     getString(R.string.shape_cube), getString(R.string.shape_texture),
-                    getString(R.string.shape_triangle)))
+                    getString(R.string.shape_lighting_cube)))
             { position, text ->
                 when (position){
                     0->{
@@ -60,7 +61,7 @@ class ShapeActivity : AppCompatActivity() {
                         updateGlsurfaceView(TextureCubeJNI::class.java,2)
                     }
                     3->{
-
+                        updateGlsurfaceView(LightingCubeJNI::class.java,2)
                     }
                 }
             }

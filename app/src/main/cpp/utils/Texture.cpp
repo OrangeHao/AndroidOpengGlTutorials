@@ -19,9 +19,11 @@ GLuint loadSimpleTexture()
                     18,  140, 171, 255, /* Some Colour Bottom Left. */
                     143, 143, 143, 255, /* Some Colour Bottom Middle. */
                     255, 255, 255, 255, /* Some Colour Bottom Right. */
+
                     255, 255, 0,   255, /* Yellow Middle Left. */
                     0,   255, 255, 255, /* Some Colour Middle. */
                     255, 0,   255, 255, /* Some Colour Middle Right. */
+
                     255, 0,   0,   255, /* Red Top Left. */
                     0,   255, 0,   255, /* Green Top Middle. */
                     0,   0,   255, 255, /* Blue Top Right. */
