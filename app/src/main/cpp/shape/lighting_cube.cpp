@@ -196,7 +196,7 @@ namespace {
         matrixIdentityFunction(modelViewMatrix);
 
         //旋转xy轴
-//        matrixRotateX(modelViewMatrix,angle);
+        matrixRotateX(modelViewMatrix,angle);
         matrixRotateY(modelViewMatrix,angle);
 
         //z轴方向移动

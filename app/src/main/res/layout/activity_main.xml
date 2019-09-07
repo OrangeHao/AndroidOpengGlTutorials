@@ -19,46 +19,55 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:text="@string/type_draw"
                     android:id="@+id/btDraw" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_texture"
                     android:id="@+id/btTexture" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_vary"
                     android:id="@+id/btVary" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_camera"
                     android:id="@+id/btCamera" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_animation"
                     android:id="@+id/btAni" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_fbo"
                     android:id="@+id/btFbo" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_egl"
                     android:id="@+id/btEgl" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_obj"
                     android:id="@+id/btObj"/>
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:text="@string/type_obj2"
                     android:id="@+id/btObj2"/>
 
