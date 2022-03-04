@@ -6,7 +6,6 @@ The java version you can check this page:
 [https://github.com/doggycoder/AndroidOpenGLDemo](https://github.com/doggycoder/AndroidOpenGLDemo)
 
 
-目前后续进度卡住了。。正在努力学习相关知识中。。
 
 
 ### 截图
