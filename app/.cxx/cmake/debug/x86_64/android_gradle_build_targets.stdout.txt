@@ -1,0 +1,9 @@
+ninja: Entering directory `E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\x86_64'
+[1/8] Building CXX object utils/CMakeFiles/utils.dir/Texture.cpp.o
+[2/8] Building CXX object shape/CMakeFiles/shape.dir/simple_triange.cpp.o
+[3/8] Building CXX object shape/CMakeFiles/shape.dir/simple_cube.cpp.o
+[4/8] Building CXX object shape/CMakeFiles/shape.dir/texture_cube.cpp.o
+[5/8] Building CXX object utils/CMakeFiles/utils.dir/matrix.cpp.o
+[6/8] Building CXX object shape/CMakeFiles/shape.dir/lighting_cube.cpp.o
+[7/8] Linking CXX shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\x86_64\libutils.so
+[8/8] Linking CXX shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\x86_64\libshape.so

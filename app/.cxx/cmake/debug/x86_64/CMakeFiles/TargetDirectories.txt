@@ -1,0 +1,8 @@
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/CMakeFiles/edit_cache.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/CMakeFiles/rebuild_cache.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/shape/CMakeFiles/shape.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/shape/CMakeFiles/edit_cache.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/shape/CMakeFiles/rebuild_cache.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/utils/CMakeFiles/utils.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/utils/CMakeFiles/edit_cache.dir
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64/utils/CMakeFiles/rebuild_cache.dir

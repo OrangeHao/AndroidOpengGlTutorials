@@ -1,0 +1,9 @@
+# ninja log v5
+175	1518	666250120	utils/CMakeFiles/utils.dir/Texture.cpp.o	ae8b7124b88c8733
+2	1735	666250120	shape/CMakeFiles/shape.dir/texture_cube.cpp.o	b8b87fd74185284f
+52	1739	666250120	shape/CMakeFiles/shape.dir/simple_cube.cpp.o	cac0ea395804cf5f
+967	2013	666250120	utils/CMakeFiles/utils.dir/matrix.cpp.o	809d915c06214d9b
+503	2116	666250121	shape/CMakeFiles/shape.dir/simple_triange.cpp.o	a92c85451c867069
+843	2238	666250121	shape/CMakeFiles/shape.dir/lighting_cube.cpp.o	dbc0df1896d1600f
+2013	2979	666250121	E:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so	42127ed143a8a4db
+2980	3865	666250122	E:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libshape.so	1e42091fa8691912
