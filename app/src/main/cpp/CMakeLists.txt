@@ -8,12 +8,18 @@ project(opengl_native)
 aux_source_directory(. DIRSRCS)
 
 #告诉编译器做关联：包下的头文件
-include_directories(include/glm)
-include_directories(shape)
-include_directories(utils)
+include_directories(
+        include/glm
+        shape
+        utils
+)
 
-add_subdirectory(shape)
-add_subdirectory(utils)
+add_subdirectory(
+        include/glm
+        shape
+        utils
+)
+
 
 
 
