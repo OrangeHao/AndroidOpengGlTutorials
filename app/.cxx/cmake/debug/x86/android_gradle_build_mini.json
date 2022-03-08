@@ -1,8 +1,6 @@
 {
   "buildFiles": [
-    "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\CMakeLists.txt",
     "E:\\Android\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
-    "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\shape\\CMakeLists.txt",
     "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\CMakeLists.txt",
     "E:\\Android\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\platforms.cmake"
   ],
@@ -11,17 +9,11 @@
   ],
   "buildTargetsCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
-    "shape-Debug-x86": {
-      "artifactName": "shape",
-      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86\" shape",
+    "opengl_native-Debug-x86": {
+      "artifactName": "opengl_native",
+      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86\" opengl_native",
       "abi": "x86",
-      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libshape.so"
-    },
-    "utils-Debug-x86": {
-      "artifactName": "utils",
-      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86\" utils",
-      "abi": "x86",
-      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libutils.so"
+      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libopengl_native.so"
     }
   }
 }

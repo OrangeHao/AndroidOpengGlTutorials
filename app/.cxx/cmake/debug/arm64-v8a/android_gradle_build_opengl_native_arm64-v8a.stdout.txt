@@ -1,0 +1,8 @@
+ninja: Entering directory `E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\arm64-v8a'
+[1/7] Building CXX object CMakeFiles/opengl_native.dir/shape/lighting_cube.cpp.o
+[2/7] Building CXX object CMakeFiles/opengl_native.dir/utils/Texture.cpp.o
+[3/7] Building CXX object CMakeFiles/opengl_native.dir/shape/simple_triange.cpp.o
+[4/7] Building CXX object CMakeFiles/opengl_native.dir/utils/matrix.cpp.o
+[5/7] Building CXX object CMakeFiles/opengl_native.dir/shape/simple_cube.cpp.o
+[6/7] Building CXX object CMakeFiles/opengl_native.dir/shape/texture_cube.cpp.o
+[7/7] Linking CXX shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\arm64-v8a\libopengl_native.so

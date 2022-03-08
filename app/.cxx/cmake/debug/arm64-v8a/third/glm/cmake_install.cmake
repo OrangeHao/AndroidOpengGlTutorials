@@ -1,4 +1,4 @@
-# Install script for directory: E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape
+# Install script for directory: E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

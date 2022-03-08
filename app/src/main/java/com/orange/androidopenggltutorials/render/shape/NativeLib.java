@@ -6,7 +6,7 @@ package com.orange.androidopenggltutorials.render.shape;
 public class NativeLib {
 
     static {
-        System.loadLibrary("shape");
+        System.loadLibrary("opengl_native");
     }
 
 

@@ -1,0 +1,8 @@
+# ninja log v5
+3	1448	668407380	CMakeFiles/opengl_native.dir/shape/lighting_cube.cpp.o	371709633d05c976
+61	1452	668407380	CMakeFiles/opengl_native.dir/shape/simple_cube.cpp.o	8ee837796d8df075
+169	1554	668407380	CMakeFiles/opengl_native.dir/shape/simple_triange.cpp.o	2ab954881390ec5
+388	1563	668407381	CMakeFiles/opengl_native.dir/utils/Texture.cpp.o	79747e3f9ed72455
+745	1757	668407381	CMakeFiles/opengl_native.dir/utils/matrix.cpp.o	48755729b14cbd39
+278	2321	668407381	CMakeFiles/opengl_native.dir/shape/texture_cube.cpp.o	6e8ab83b043b75b4
+2323	3210	668407382	E:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/x86/libopengl_native.so	ea988ec849080d31

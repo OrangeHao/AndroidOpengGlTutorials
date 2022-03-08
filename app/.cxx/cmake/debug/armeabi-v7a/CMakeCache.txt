@@ -153,7 +153,7 @@ CMAKE_OBJCOPY:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/
 CMAKE_OBJDUMP:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/arm-linux-androideabi-objdump.exe
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=opengl_native
+CMAKE_PROJECT_NAME:STATIC=Project
 
 //Ranlib
 CMAKE_RANLIB:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/bin/arm-linux-androideabi-ranlib.exe
@@ -204,8 +204,8 @@ CMAKE_SYSTEM_NAME:UNINITIALIZED=Android
 //No help, variable specified on the command line.
 CMAKE_SYSTEM_VERSION:UNINITIALIZED=21
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=E:\Android\Sdk\ndk\21.3.6528147\build\cmake\android.toolchain.cmake
 
 //If this value is on, makefiles will be generated without the
 // .SILENT directive, and all commands will be echoed to the console
@@ -213,11 +213,20 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/build/cmake/androi
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Value Computed by CMake
+Project_BINARY_DIR:STATIC=E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a
+
+//Value Computed by CMake
+Project_SOURCE_DIR:STATIC=E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp
+
 //Path to a library.
 log-lib:FILEPATH=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
 
 //Value Computed by CMake
 opengl_native_BINARY_DIR:STATIC=E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a
+
+//Dependencies for the target
+opengl_native_LIB_DEPENDS:STATIC=general;GLESv3;general;E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so;general;EGL;general;android;
 
 //Value Computed by CMake
 opengl_native_SOURCE_DIR:STATIC=E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp
@@ -333,7 +342,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

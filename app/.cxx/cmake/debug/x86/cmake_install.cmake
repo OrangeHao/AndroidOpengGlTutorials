@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/opengl_native")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,13 +35,6 @@ endif()
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "TRUE")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86/shape/cmake_install.cmake")
-  include("E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86/utils/cmake_install.cmake")
-
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

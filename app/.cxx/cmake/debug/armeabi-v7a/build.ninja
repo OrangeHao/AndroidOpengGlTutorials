@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: opengl_native
+# Project: Project
 # Configuration: Debug
 # =============================================================================
 
@@ -29,6 +29,75 @@ ninja_required_version = 1.5
 
 include rules.ninja
 
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target opengl_native
+
+
+#############################################
+# Order-only phony target for opengl_native
+
+build cmake_object_order_depends_target_opengl_native: phony
+build CMakeFiles/opengl_native.dir/shape/lighting_cube.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/lighting_cube.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\shape\lighting_cube.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\shape
+build CMakeFiles/opengl_native.dir/shape/simple_cube.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/simple_cube.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\shape\simple_cube.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\shape
+build CMakeFiles/opengl_native.dir/shape/simple_triange.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/simple_triange.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\shape\simple_triange.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\shape
+build CMakeFiles/opengl_native.dir/shape/texture_cube.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/texture_cube.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\shape\texture_cube.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\shape
+build CMakeFiles/opengl_native.dir/utils/Texture.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/Texture.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\utils\Texture.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\utils
+build CMakeFiles/opengl_native.dir/utils/matrix.cpp.o: CXX_COMPILER__opengl_native E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/matrix.cpp || cmake_object_order_depends_target_opengl_native
+  DEFINES = -Dopengl_native_EXPORTS
+  DEP_FILE = CMakeFiles\opengl_native.dir\utils\matrix.cpp.o.d
+  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
+  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  OBJECT_FILE_DIR = CMakeFiles\opengl_native.dir\utils
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target opengl_native
+
+
+#############################################
+# Link the shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libopengl_native.so
+
+build E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libopengl_native.so: CXX_SHARED_LIBRARY_LINKER__opengl_native CMakeFiles/opengl_native.dir/shape/lighting_cube.cpp.o CMakeFiles/opengl_native.dir/shape/simple_cube.cpp.o CMakeFiles/opengl_native.dir/shape/simple_triange.cpp.o CMakeFiles/opengl_native.dir/shape/texture_cube.cpp.o CMakeFiles/opengl_native.dir/utils/Texture.cpp.o CMakeFiles/opengl_native.dir/utils/matrix.cpp.o | E$:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
+  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info
+  LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--exclude-libs,libunwind.a -Wl,--no-undefined -Qunused-arguments
+  LINK_LIBRARIES = -lGLESv3 -llog -lEGL -landroid -latomic -lm
+  OBJECT_DIR = CMakeFiles\opengl_native.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  SONAME = libopengl_native.so
+  SONAME_FLAG = -Wl,-soname,
+  TARGET_FILE = E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libopengl_native.so
+  TARGET_PDB = opengl_native.so.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -49,172 +118,14 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Write statements declared in CMakeLists.txt:
-# E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for SHARED_LIBRARY target shape
-
-
-#############################################
-# Order-only phony target for shape
-
-build cmake_object_order_depends_target_shape: phony || cmake_object_order_depends_target_utils
-build shape/CMakeFiles/shape.dir/lighting_cube.cpp.o: CXX_COMPILER__shape E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/lighting_cube.cpp || cmake_object_order_depends_target_shape
-  DEFINES = -Dshape_EXPORTS
-  DEP_FILE = shape\CMakeFiles\shape.dir\lighting_cube.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = shape\CMakeFiles\shape.dir
-  OBJECT_FILE_DIR = shape\CMakeFiles\shape.dir
-build shape/CMakeFiles/shape.dir/simple_cube.cpp.o: CXX_COMPILER__shape E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/simple_cube.cpp || cmake_object_order_depends_target_shape
-  DEFINES = -Dshape_EXPORTS
-  DEP_FILE = shape\CMakeFiles\shape.dir\simple_cube.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = shape\CMakeFiles\shape.dir
-  OBJECT_FILE_DIR = shape\CMakeFiles\shape.dir
-build shape/CMakeFiles/shape.dir/simple_triange.cpp.o: CXX_COMPILER__shape E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/simple_triange.cpp || cmake_object_order_depends_target_shape
-  DEFINES = -Dshape_EXPORTS
-  DEP_FILE = shape\CMakeFiles\shape.dir\simple_triange.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = shape\CMakeFiles\shape.dir
-  OBJECT_FILE_DIR = shape\CMakeFiles\shape.dir
-build shape/CMakeFiles/shape.dir/texture_cube.cpp.o: CXX_COMPILER__shape E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/texture_cube.cpp || cmake_object_order_depends_target_shape
-  DEFINES = -Dshape_EXPORTS
-  DEP_FILE = shape\CMakeFiles\shape.dir\texture_cube.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = shape\CMakeFiles\shape.dir
-  OBJECT_FILE_DIR = shape\CMakeFiles\shape.dir
-
-# =============================================================================
-# Link build statements for SHARED_LIBRARY target shape
-
-
-#############################################
-# Link the shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libshape.so
-
-build E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libshape.so: CXX_SHARED_LIBRARY_LINKER__shape shape/CMakeFiles/shape.dir/lighting_cube.cpp.o shape/CMakeFiles/shape.dir/simple_cube.cpp.o shape/CMakeFiles/shape.dir/simple_triange.cpp.o shape/CMakeFiles/shape.dir/texture_cube.cpp.o | E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so E$:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so || E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info
-  LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--exclude-libs,libunwind.a -Wl,--no-undefined -Qunused-arguments
-  LINK_LIBRARIES = E:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so -llog -lGLESv3 -latomic -lm
-  OBJECT_DIR = shape\CMakeFiles\shape.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  SONAME = libshape.so
-  SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libshape.so
-  TARGET_PDB = shape.so.dbg
-
-#############################################
-# Utility command for edit_cache
-
-build shape/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a\shape && E:\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build shape/edit_cache: phony shape/CMakeFiles/edit_cache.util
-
-#############################################
-# Utility command for rebuild_cache
-
-build shape/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a\shape && E:\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HE:\Android\GithubProjects\AndroidOpengGlTutorials\app\src\main\cpp -BE:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-build shape/rebuild_cache: phony shape/CMakeFiles/rebuild_cache.util
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# E:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for SHARED_LIBRARY target utils
-
-
-#############################################
-# Order-only phony target for utils
-
-build cmake_object_order_depends_target_utils: phony
-build utils/CMakeFiles/utils.dir/Texture.cpp.o: CXX_COMPILER__utils E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/Texture.cpp || cmake_object_order_depends_target_utils
-  DEFINES = -Dutils_EXPORTS
-  DEP_FILE = utils\CMakeFiles\utils.dir\Texture.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = utils\CMakeFiles\utils.dir
-  OBJECT_FILE_DIR = utils\CMakeFiles\utils.dir
-build utils/CMakeFiles/utils.dir/matrix.cpp.o: CXX_COMPILER__utils E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/matrix.cpp || cmake_object_order_depends_target_utils
-  DEFINES = -Dutils_EXPORTS
-  DEP_FILE = utils\CMakeFiles\utils.dir\matrix.cpp.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info  -fPIC
-  INCLUDES = -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils
-  OBJECT_DIR = utils\CMakeFiles\utils.dir
-  OBJECT_FILE_DIR = utils\CMakeFiles\utils.dir
-
-# =============================================================================
-# Link build statements for SHARED_LIBRARY target utils
-
-
-#############################################
-# Link the shared library E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libutils.so
-
-build E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so: CXX_SHARED_LIBRARY_LINKER__utils utils/CMakeFiles/utils.dir/Texture.cpp.o utils/CMakeFiles/utils.dir/matrix.cpp.o | E$:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security  -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info
-  LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -static-libstdc++ -Wl,--build-id -Wl,--fatal-warnings -Wl,--exclude-libs,libunwind.a -Wl,--no-undefined -Qunused-arguments
-  LINK_LIBRARIES = -lGLESv3 -llog -latomic -lm
-  OBJECT_DIR = utils\CMakeFiles\utils.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  SONAME = libutils.so
-  SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = E:\Android\GithubProjects\AndroidOpengGlTutorials\app\build\intermediates\cmake\debug\obj\armeabi-v7a\libutils.so
-  TARGET_PDB = utils.so.dbg
-
-#############################################
-# Utility command for edit_cache
-
-build utils/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a\utils && E:\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -E echo "No interactive CMake dialog available.""
-  DESC = No interactive CMake dialog available...
-  restat = 1
-build utils/edit_cache: phony utils/CMakeFiles/edit_cache.util
-
-#############################################
-# Utility command for rebuild_cache
-
-build utils/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a\utils && E:\Android\Sdk\cmake\3.10.2.4988404\bin\cmake.exe -HE:\Android\GithubProjects\AndroidOpengGlTutorials\app\src\main\cpp -BE:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a"
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-build utils/rebuild_cache: phony utils/CMakeFiles/rebuild_cache.util
-# =============================================================================
 # Target aliases.
 
-build libshape.so: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libshape.so
-build libutils.so: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so
-build shape: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libshape.so
-build utils: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so
+build libopengl_native.so: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libopengl_native.so
+build opengl_native: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libopengl_native.so
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
-# =============================================================================
-
-#############################################
-# Folder: E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/shape
-
-build  shape/all: phony shape
-# =============================================================================
-
-#############################################
-# Folder: E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/utils
-
-build  utils/all: phony utils
 # =============================================================================
 # Built-in targets
 
@@ -222,7 +133,7 @@ build  utils/all: phony utils
 #############################################
 # The main all target.
 
-build all: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libshape.so E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libutils.so
+build all: phony E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libopengl_native.so
 
 #############################################
 # Make the all target the default.
@@ -232,13 +143,13 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/CMakeLists.txt E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/CMakeLists.txt E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake
   pool = console
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake CMakeFiles/feature_tests.c CMakeFiles/feature_tests.cxx E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape/CMakeLists.txt E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils/CMakeLists.txt E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompiler.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCCompilerABI.c E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompiler.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCXXCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompileFeatures.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineCompilerABI.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeDetermineSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeFindBinUtils.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeParseImplicitLinkInfo.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystem.cmake.in E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCXXCompiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeTestCompilerCommon.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C-FeatureTests.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-FeatureTests.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX-TestableFeatures.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-FindBinUtils.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Internal/FeatureTesting.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Determine.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android/Determine-Compiler.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake: phony
+build CMakeCache.txt CMakeFiles/3.10.2/CMakeCCompiler.cmake CMakeFiles/3.10.2/CMakeCXXCompiler.cmake CMakeFiles/3.10.2/CMakeSystem.cmake E$:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/CMakeLists.txt E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCXXInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeGenericSystem.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Compiler/GNU.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-C.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang-CXX.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Clang.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android-Initialize.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Android.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/Linux.cmake E$:/Android/Sdk/cmake/3.10.2.4988404/share/cmake-3.10/Modules/Platform/UnixPaths.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake E$:/Android/Sdk/ndk/21.3.6528147/build/cmake/platforms.cmake: phony
 
 #############################################
 # Clean all the built files.

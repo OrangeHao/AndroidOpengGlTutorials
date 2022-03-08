@@ -1,13 +1,10 @@
 {
   "stringTable": {
     "0": "E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86_64",
-    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dshape_EXPORTS -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info -fPIC",
-    "2": "--target=x86_64-none-linux-android21 --gcc-toolchain=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dutils_EXPORTS -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info -fPIC"
+    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64 --sysroot=E:/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/windows-x86_64/sysroot -Dopengl_native_EXPORTS -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/third/glm -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/shape -IE:/Android/GithubProjects/AndroidOpengGlTutorials/app/src/main/cpp/utils -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -frtti -fexceptions -D__STDC_FORMAT_MACROS -O0 -fno-limit-debug-info -fPIC"
   },
   "buildFiles": [
-    "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\CMakeLists.txt",
     "E:\\Android\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\android.toolchain.cmake",
-    "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\shape\\CMakeLists.txt",
     "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\CMakeLists.txt",
     "E:\\Android\\Sdk\\ndk\\21.3.6528147\\build\\cmake\\platforms.cmake"
   ],
@@ -16,33 +13,12 @@
   ],
   "buildTargetsCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe  -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86_64\" {LIST_OF_TARGETS_TO_BUILD}",
   "libraries": {
-    "utils-Debug-x86_64": {
-      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86_64\" utils",
+    "opengl_native-Debug-x86_64": {
+      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86_64\" opengl_native",
       "buildType": "debug",
       "toolchain": "1520663287",
       "abi": "x86_64",
-      "artifactName": "utils",
-      "files": [
-        {
-          "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\Texture.cpp",
-          "flagsOrdinal": 2,
-          "workingDirectoryOrdinal": 0
-        },
-        {
-          "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\matrix.cpp",
-          "flagsOrdinal": 2,
-          "workingDirectoryOrdinal": 0
-        }
-      ],
-      "headers": [],
-      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libutils.so"
-    },
-    "shape-Debug-x86_64": {
-      "buildCommand": "E:\\Android\\Sdk\\cmake\\3.10.2.4988404\\bin\\ninja.exe -C \"E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\.cxx\\cmake\\debug\\x86_64\" shape",
-      "buildType": "debug",
-      "toolchain": "1520663287",
-      "abi": "x86_64",
-      "artifactName": "shape",
+      "artifactName": "opengl_native",
       "files": [
         {
           "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\shape\\lighting_cube.cpp",
@@ -63,10 +39,20 @@
           "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\shape\\texture_cube.cpp",
           "flagsOrdinal": 1,
           "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\Texture.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\src\\main\\cpp\\utils\\matrix.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
         }
       ],
       "headers": [],
-      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libshape.so"
+      "output": "E:\\Android\\GithubProjects\\AndroidOpengGlTutorials\\app\\build\\intermediates\\cmake\\debug\\obj\\x86_64\\libopengl_native.so"
     }
   },
   "toolchains": {

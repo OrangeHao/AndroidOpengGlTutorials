@@ -1,8 +1,3 @@
+E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/opengl_native.dir
 E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
 E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/shape/CMakeFiles/shape.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/shape/CMakeFiles/edit_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/shape/CMakeFiles/rebuild_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/utils/CMakeFiles/utils.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/utils/CMakeFiles/edit_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/utils/CMakeFiles/rebuild_cache.dir
