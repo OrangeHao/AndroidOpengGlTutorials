@@ -1,3 +1,0 @@
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/opengl_native.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

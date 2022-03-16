@@ -1,3 +1,0 @@
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86/CMakeFiles/opengl_native.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86/CMakeFiles/edit_cache.dir
-E:/Android/GithubProjects/AndroidOpengGlTutorials/app/.cxx/cmake/debug/x86/CMakeFiles/rebuild_cache.dir

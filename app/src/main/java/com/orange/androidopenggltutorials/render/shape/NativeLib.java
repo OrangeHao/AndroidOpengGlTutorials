@@ -24,4 +24,7 @@ public class NativeLib {
     public static native void lightingCubeInit(int width,int height);
     public static native void lightingCubeRender();
 
+
+
+
 }

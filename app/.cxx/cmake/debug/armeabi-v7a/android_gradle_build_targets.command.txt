@@ -1,8 +1,0 @@
-Executable : E:\Android\Sdk\cmake\3.10.2.4988404\bin\ninja.exe
-arguments : 
--C
-E:\Android\GithubProjects\AndroidOpengGlTutorials\app\.cxx\cmake\debug\armeabi-v7a
-shape
-utils
-jvmArgs : 
-
