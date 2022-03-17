@@ -6,12 +6,16 @@ package com.orange.androidopenggltutorials.render.shape;
 public class NativeLib {
 
     static {
-        System.loadLibrary("shape");
+        System.loadLibrary("opengl_native");
     }
 
 
-    public static native void init(int width,int height);
-    public static native void step();
+//    public static native void init(int width,int height);
+//    public static native void step();
+
+    public static native void native_setCourseById(int courseId);
+    public static native void native_initCourse();
+    public static native void native_drawCourseFrame();
 
 
     public static native void simpleCubeInit(int width,int height);
@@ -23,5 +27,8 @@ public class NativeLib {
 
     public static native void lightingCubeInit(int width,int height);
     public static native void lightingCubeRender();
+
+
+
 
 }

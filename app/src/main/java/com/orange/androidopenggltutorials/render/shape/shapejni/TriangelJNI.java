@@ -20,12 +20,12 @@ public class TriangelJNI extends BaseRender {
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        NativeLib.init(width,height);
+        NativeLib.native_initCourse();
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        NativeLib.step();
+        NativeLib.native_drawCourseFrame();
     }
 
 

@@ -17,8 +17,8 @@
 #include "matrix.h"
 
 #include "gltools.h"
-#include "Texture.cpp"
-
+#include "Texture.h"
+#include "Shader.h"
 
 namespace{
 

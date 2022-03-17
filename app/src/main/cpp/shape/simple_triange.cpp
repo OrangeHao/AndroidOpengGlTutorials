@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include "Shader.h"
 #include "gltools.h"
 
 
@@ -32,16 +33,13 @@ namespace triange{
 
 
 
-    GLuint simpleTriangleProgram;
     GLuint vPosition;
+    Shader triangleShader;
 
     bool setupGraphics(int w, int h) {
-        simpleTriangleProgram = createProgram(glVertexShader, glFragmentShader);
-        if (!simpleTriangleProgram) {
-            LOGE ("Could not create program");
-            return false;
-        }
-        vPosition = glGetAttribLocation(simpleTriangleProgram, "vPosition");
+        triangleShader= Shader(glVertexShader, glFragmentShader);
+
+        vPosition = glGetAttribLocation(triangleShader.ID, "vPosition");
         glViewport(0, 0, w, h);
         return true;
     }
@@ -56,7 +54,7 @@ namespace triange{
 //    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 //    glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(simpleTriangleProgram);
+        triangleShader.use();
 
         //GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const void *pointer
         glVertexAttribPointer(vPosition, 2, GL_FLOAT, GL_FALSE, 0, triangleVertices);
@@ -69,16 +67,3 @@ namespace triange{
 }
 
 
-
-
-extern "C"
-JNIEXPORT void JNICALL
-SHAPEJAVAPATH(init)(JNIEnv *env, jclass type, jint width, jint height) {
-    triange::setupGraphics(width, height);
-}
-
-extern "C"
-JNIEXPORT void JNICALL
-SHAPEJAVAPATH(step)(JNIEnv *env, jclass type) {
-    triange::renderFrame();
-}
