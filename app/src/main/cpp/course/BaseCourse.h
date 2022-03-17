@@ -1,5 +1,9 @@
 
 
+#ifndef ANDROID_OPENGL_TUTORIALS_BASE_COURSE
+#define ANDROID_OPENGL_TUTORIALS_BASE_COURSE
+
+
 class BaseCourse
 {
 public:
@@ -19,3 +23,6 @@ public:
 protected:
 
 };
+
+
+#endif
