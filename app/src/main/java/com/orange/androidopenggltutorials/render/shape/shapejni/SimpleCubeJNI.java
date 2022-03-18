@@ -18,11 +18,12 @@ public class SimpleCubeJNI extends BaseRender {
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        NativeLib.simpleCubeInit(width,height);
+        NativeLib.native_setCourseById(2);
+        NativeLib.native_initCourse(width,height);
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        NativeLib.simpleCubeRender();
+        NativeLib.native_drawCourseFrame();
     }
 }

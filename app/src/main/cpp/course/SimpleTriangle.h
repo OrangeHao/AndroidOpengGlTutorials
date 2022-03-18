@@ -11,7 +11,7 @@ public:
     SimpleTriangle();
     ~SimpleTriangle();
 
-    virtual void init();
+    virtual void init(int width,int height);
     virtual void drawFrame();
     virtual void destroy();
 

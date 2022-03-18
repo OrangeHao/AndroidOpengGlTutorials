@@ -17,7 +17,7 @@ public:
 
     void init();
     void setCourseById(int type);
-    void initCourse();
+    void initCourse(int width, int height);
     void drawFrame();
 
     static CourseManager* getInstance();

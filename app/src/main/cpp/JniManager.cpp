@@ -21,8 +21,8 @@ native_setCourseById(JNIEnv *env, jobject instance,jint course_type){
 }
 
 JNIEXPORT void JNICALL
-native_initCourse(JNIEnv *env, jobject instance){
-    CourseManager::getInstance()->initCourse();
+native_initCourse(JNIEnv *env, jobject instance,jint width,jint height){
+    CourseManager::getInstance()->initCourse(width,height);
 }
 
 JNIEXPORT void JNICALL
@@ -86,7 +86,7 @@ static void UnregisterNativeMethods(JNIEnv *env, const char *className)
 
 static JNINativeMethod courseMethods[]={
         {"native_setCourseById",    "(I)V",     (void *)(native_setCourseById)},
-        {"native_initCourse",       "()V",      (void *)(native_initCourse)},
+        {"native_initCourse",       "(II)V",      (void *)(native_initCourse)},
         {"native_drawCourseFrame",  "()V",      (void *)(native_drawCourseFrame)}
 };
 

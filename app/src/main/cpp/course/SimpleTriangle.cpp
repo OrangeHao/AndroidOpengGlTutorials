@@ -35,7 +35,7 @@ SimpleTriangle::~SimpleTriangle() {
 }
 
 
-void SimpleTriangle::init() {
+void SimpleTriangle::init(int width,int height) {
     LOGE("SimpleTriangle jni");
     triangleShader= Shader(glVertexShader, glFragmentShader);
     vPosition = glGetAttribLocation(triangleShader.ID, "vPosition");
