@@ -1,6 +1,7 @@
 
 #include "CourseManager.h"
 #include "SimpleTriangle.h"
+#include "SimpleCube.h"
 
 CourseManager *CourseManager::m_instance= nullptr;
 
@@ -38,20 +39,21 @@ void CourseManager::setCourseById(int type) {
             m_curCourse=new SimpleTriangle();
             break;
         case COURSE_ID_CUBE:
-            m_curCourse=new SimpleTriangle();
+            m_curCourse=new SimpleCube();
             break;
         default:
             m_curCourse=new SimpleTriangle();
             break;
     }
+
 }
 
-void CourseManager::initCourse() {
+void CourseManager::initCourse(int width, int height) {
     LOGE("CourseManager initCourse");
     if (m_curCourse== nullptr){
         m_curCourse=new SimpleTriangle();
     }
-    m_curCourse->init();
+    m_curCourse->init(width,height);
 }
 
 void CourseManager::drawFrame() {
