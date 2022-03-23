@@ -7,6 +7,8 @@
 
 #define COURSE_ID_TRIANGLE  1
 #define COURSE_ID_CUBE      2
+#define COURSE_ID_LIGHTING_CUBE   3
+#define COURSE_ID_TEXTURE_CUBE   4
 
 class CourseManager{
 

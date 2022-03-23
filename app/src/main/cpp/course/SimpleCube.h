@@ -16,22 +16,25 @@
 
 
 char glVertextShader[]=
-        "attribute vec4 vertexPosition;\n"
-        "attribute vec3 vertexColour;\n"
-        "varying vec3 fragColour;\n"
+        "#version 300 es\n"
+        "layout (location = 0) in vec4 vertexPosition;\n"
+        "layout (location = 1) in vec3 vertexColour;\n"
+        "out vec3 fragColors;\n"
         "uniform mat4 projection;\n"
         "uniform mat4 modeView;\n"
         "\n"
         "void main() {\n"
         "    gl_Position=projection*modeView*vertexPosition;\n"
-        "    fragColour=vertexColour;\n"
+        "    fragColors=vertexColour;\n"
         "}";
 
 char glFragmentShader[]=
-        "precision mediump float;\n"
-        "varying vec3 fragColour;\n"
+        "#version 300 es\n"
+        "precision mediump float;                     \n"
+        "in vec3 fragColors;\n"
+        "out vec4 fragColor;\n"
         "void main() {\n"
-        "    gl_FragColor=vec4(fragColour,1.0);\n"
+        "    fragColor=vec4(fragColors,1.0);\n"
         "}";
 
 
@@ -69,7 +72,9 @@ GLfloat colour[]={
         1.0f,0.0f,0.0f,1.0f,
 };
 
-
+/****
+ * 简单立方体示例
+ */
 class SimpleCube: public BaseCourse{
 
 public:
@@ -84,9 +89,6 @@ public:
     void init(int width,int height){
         LOGE("SimpleCube init");
         simpleCubeShader=Shader(glVertextShader, glFragmentShader);
-
-        vertexLocation=glGetAttribLocation(simpleCubeShader.ID,"vertexPosition");
-        vertexColourInput=glGetAttribLocation(simpleCubeShader.ID,"vertexColour");
 
         mWidth=width;
         mHeight=height;
@@ -106,12 +108,12 @@ public:
         glUseProgram(simpleCubeShader.ID);
 
         //设置位置数据
-        glVertexAttribPointer(vertexLocation,3,GL_FLOAT,GL_FALSE,0,cubeVertices);
-        glEnableVertexAttribArray(vertexLocation);
+        glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,0,cubeVertices);
+        glEnableVertexAttribArray(0);
 
         //设置颜色数据
-        glVertexAttribPointer(vertexColourInput,3,GL_FLOAT,GL_FALSE,0,colour);
-        glEnableVertexAttribArray(vertexColourInput);
+        glVertexAttribPointer(1,3,GL_FLOAT,GL_FALSE,0,colour);
+        glEnableVertexAttribArray(1);
 
         //设置矩阵数据
         //near和far是表示视点到远近投影平面的距离
@@ -138,9 +140,6 @@ public:
 private:
 
     Shader simpleCubeShader;
-
-    GLint vertexLocation;
-    GLint vertexColourInput;
 
     float angle = 0;
 

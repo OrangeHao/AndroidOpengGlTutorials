@@ -19,12 +19,13 @@ public class LightingCubeJNI extends BaseRender {
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        NativeLib.lightingCubeInit(width,height);
+        NativeLib.native_setCourseById(3);
+        NativeLib.native_initCourse(width,height);
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        NativeLib.lightingCubeRender();
+        NativeLib.native_drawCourseFrame();
     }
 
 

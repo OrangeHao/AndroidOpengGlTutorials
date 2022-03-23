@@ -19,13 +19,13 @@ public class TextureCubeJNI extends BaseRender {
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        NativeLib.textureCubeInit(width,height);
+        NativeLib.native_setCourseById(4);
+        NativeLib.native_initCourse(width,height);
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        NativeLib.textureCubeRender();
+        NativeLib.native_drawCourseFrame();
     }
-
 
 }

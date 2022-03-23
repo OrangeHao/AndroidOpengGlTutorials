@@ -17,7 +17,6 @@ public:
 
 private:
 
-    GLuint vPosition;
     Shader triangleShader;
 
 };

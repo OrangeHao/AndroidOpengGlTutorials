@@ -2,6 +2,8 @@
 #include "CourseManager.h"
 #include "SimpleTriangle.h"
 #include "SimpleCube.h"
+#include "LightingCube.h"
+#include "TextureCube.h"
 
 CourseManager *CourseManager::m_instance= nullptr;
 
@@ -40,6 +42,12 @@ void CourseManager::setCourseById(int type) {
             break;
         case COURSE_ID_CUBE:
             m_curCourse=new SimpleCube();
+            break;
+        case COURSE_ID_LIGHTING_CUBE:
+            m_curCourse=new LightingCube();
+            break;
+        case COURSE_ID_TEXTURE_CUBE:
+            m_curCourse=new TextureCube();
             break;
         default:
             m_curCourse=new SimpleTriangle();
