@@ -10,12 +10,7 @@
 #include <GLES3/gl3.h>
 #include <GLES3/gl3ext.h>
 #include <cstdlib>
-
-
-#define LOG_TAG "gl_czh"
-#define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
-#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
-
+#include "LogUtil.h"
 
 #define SHAPEJAVAPATH(path)Java_com_orange_androidopenggltutorials_render_shape_NativeLib_##path
 

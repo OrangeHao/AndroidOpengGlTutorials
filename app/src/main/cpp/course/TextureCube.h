@@ -4,7 +4,6 @@
 #include "Shader.h"
 #include "BaseCourse.h"
 #include "LogUtil.h"
-#include "Texture.h"
 
 
 class TextureCube: public BaseCourse{
@@ -17,7 +16,6 @@ public:
         LOGD("TextureCube init");
         char vShader[] =
                 "#version 300 es\n"
-                "precision mediump float;"
                 "layout (location = 0) in vec4 vertexPosition;\n"
                 "layout (location = 1) in vec2 vertexTextureCord;\n"
                 "out vec2 textureCord;\n"
@@ -32,12 +30,12 @@ public:
         char fragShader[] =
                 "#version 300 es\n"
                 "precision mediump float;"
-                "uniform mediump sampler2D texture;\n"
-                "in mediump vec2 textureCord;\n"
+                "uniform sampler2D simpleTexture;\n"
+                "in vec2 textureCord;\n"
                 "out vec4 fragColor;\n"
                 "\n"
                 "void main() {\n"
-                "    fragColor=texture(texture,textureCord);\n"
+                "    fragColor=texture(simpleTexture,textureCord);\n"
                 "}";
 
         textureCubeShader=Shader(vShader,fragShader);
@@ -47,6 +45,7 @@ public:
 
         glEnable(GL_DEPTH_TEST);
 
+        //创建纹理
         int textureId = loadSimpleTexture();
         if (textureId!=0){
             return;
@@ -128,7 +127,7 @@ public:
         textureCubeShader.setMat4("projection",projection);
         textureCubeShader.setMat4("modeView",view);
 
-        textureCubeShader.setInt("texture",0);
+        textureCubeShader.setInt("simpleTexture",0);
 
         //36个点
         glDrawElements(GL_TRIANGLES,36,GL_UNSIGNED_SHORT,indices);
@@ -153,5 +152,50 @@ private:
     int mWidth=0;
     int mHeight=0;
 
+
+    GLuint loadSimpleTexture()
+    {
+        /* Texture Object Handle. */
+        GLuint textureId;
+
+        /* 3 x 3 Image,  R G B A Channels RAW Format. */
+        GLubyte pixels[9 * 4] =
+                {
+                        18,  140, 171, 255, /* Some Colour Bottom Left. */
+                        143, 143, 143, 255, /* Some Colour Bottom Middle. */
+                        255, 255, 255, 255, /* Some Colour Bottom Right. */
+
+                        255, 255, 0,   255, /* Yellow Middle Left. */
+                        0,   255, 255, 255, /* Some Colour Middle. */
+                        255, 0,   255, 255, /* Some Colour Middle Right. */
+
+                        255, 0,   0,   255, /* Red Top Left. */
+                        0,   255, 0,   255, /* Green Top Middle. */
+                        0,   0,   255, 255, /* Blue Top Right. */
+                };
+        /* [includeTextureDefinition] */
+
+        /* [placeTextureInMemory] */
+        /* Use tightly packed data. */
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+        /* Generate a texture object. */
+        glGenTextures(1, &textureId);
+
+        /* Activate a texture. */
+        glActiveTexture(GL_TEXTURE0);
+
+        /* Bind the texture object. */
+        glBindTexture(GL_TEXTURE_2D, textureId);
+
+        /* Load the texture. */
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 3, 3, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+
+        /* Set the filtering mode. */
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+        return textureId;
+    }
 
 };

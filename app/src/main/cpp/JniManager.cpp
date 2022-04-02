@@ -4,6 +4,7 @@
 #include "SimpleTriangle.h"
 #include "CourseManager.h"
 #include "BaseCourse.h"
+#include "LogUtil.h"
 
 
 #define NATIVE_CLASS_NAME "com/orange/androidopenggltutorials/render/shape/NativeLib"

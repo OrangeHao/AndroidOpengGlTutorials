@@ -4,6 +4,7 @@
 #include "SimpleCube.h"
 #include "LightingCube.h"
 #include "TextureCube.h"
+#include "LogUtil.h"
 
 CourseManager *CourseManager::m_instance= nullptr;
 
@@ -19,7 +20,7 @@ CourseManager::~CourseManager() {
 }
 
 CourseManager * CourseManager::getInstance() {
-    LOGE("CourseManager getInstance");
+    LOGI("CourseManager getInstance");
     if(m_instance== nullptr){
         m_instance=new CourseManager;
     }
@@ -35,7 +36,7 @@ void CourseManager::init() {
 }
 
 void CourseManager::setCourseById(int type) {
-    LOGE("CourseManager setCourseById");
+    LOGI("CourseManager setCourseById");
     switch (type) {
         case COURSE_ID_TRIANGLE:
             m_curCourse=new SimpleTriangle();
@@ -57,7 +58,7 @@ void CourseManager::setCourseById(int type) {
 }
 
 void CourseManager::initCourse(int width, int height) {
-    LOGE("CourseManager initCourse");
+    LOGI("CourseManager initCourse");
     if (m_curCourse== nullptr){
         m_curCourse=new SimpleTriangle();
     }
@@ -65,7 +66,7 @@ void CourseManager::initCourse(int width, int height) {
 }
 
 void CourseManager::drawFrame() {
-    LOGE("CourseManager drawFrame");
+    LOGI("CourseManager drawFrame");
     if (m_curCourse!= nullptr){
         m_curCourse->drawFrame();
     }

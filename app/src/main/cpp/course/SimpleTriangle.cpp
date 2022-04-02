@@ -24,9 +24,9 @@ const char glFragmentShader[] =
 
 
 const GLfloat triangleVertices[] = {
-        0.0f, 0.5f,
-        -0.5f, -0.5f,
-        0.5f, -0.5f
+        0.0f, 0.25f,
+        -0.5f, -0.25f,
+        0.5f, -0.25f
 };
 
 SimpleTriangle::SimpleTriangle() {
