@@ -2,20 +2,20 @@ package com.orange.androidopenggltutorials.render.shape
 
 import android.opengl.GLSurfaceView
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.orange.androidopenggltutorials.render.shape.shapejni.SimpleCubeJNI
-import kotlinx.android.synthetic.main.activity_shape.*
 import com.lxj.xpopup.XPopup
 import com.orange.androidopenggltutorials.R
 import com.orange.androidopenggltutorials.render.BaseRender
 import com.orange.androidopenggltutorials.render.shape.shapejni.LightingCubeJNI
 import com.orange.androidopenggltutorials.render.shape.shapejni.TextureCubeJNI
 import com.orange.androidopenggltutorials.render.shape.shapejni.TriangelJNI
-import java.security.AccessController.getContext
 
 
 class ShapeActivity : AppCompatActivity() {
 
+    var glSurfaceView:ShapeGlSurfaceView?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,8 @@ class ShapeActivity : AppCompatActivity() {
     }
 
     private fun init(){
-        switchBtn.setOnClickListener {
+        glSurfaceView=findViewById(R.id.glSurfaceView)
+        findViewById<Button>(R.id.switchBtn).setOnClickListener {
             showSelectDialog()
         }
     }
