@@ -2,7 +2,10 @@ package com.orange.androidopenggltutorials.render.camera
 
 import android.Manifest
 import android.content.pm.PackageManager
+import android.graphics.SurfaceTexture
 import android.os.Bundle
+import android.view.Surface
+import android.view.TextureView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -17,6 +20,7 @@ class CameraPreviewActivity : AppCompatActivity(),Camera2FrameCallback{
     private val CAMERA_PERMISSION_REQUEST_CODE = 1
 
     var mCamera2Wrapper:Camera2Wrapper?=null
+    var mTextureView:TextureView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +30,31 @@ class CameraPreviewActivity : AppCompatActivity(),Camera2FrameCallback{
     }
 
     private fun initView(){
+        mTextureView=findViewById(R.id.textureView)
+        mTextureView!!.surfaceTextureListener=object :TextureView.SurfaceTextureListener{
+            override fun onSurfaceTextureAvailable(
+                surface: SurfaceTexture, width: Int, height: Int) {
+                mCamera2Wrapper = Camera2Wrapper(this@CameraPreviewActivity, Surface(surface))
+                if (hasPermissionsGranted(REQUEST_PERMISSIONS)) {
+                    mCamera2Wrapper!!.startCamera()
+                } else {
+                    ActivityCompat.requestPermissions(
+                        this@CameraPreviewActivity,
+                        REQUEST_PERMISSIONS,
+                        CAMERA_PERMISSION_REQUEST_CODE
+                    )
+                }
+            }
 
+            override fun onSurfaceTextureSizeChanged(
+                surface: SurfaceTexture, width: Int, height: Int) {}
+
+            override fun onSurfaceTextureDestroyed(surface: SurfaceTexture): Boolean {
+                return false
+            }
+
+            override fun onSurfaceTextureUpdated(surface: SurfaceTexture) {}
+        }
     }
 
     override fun onResume() {

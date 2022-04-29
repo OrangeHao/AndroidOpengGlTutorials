@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.orange.androidopenggltutorials.render.camera.Camera2Wrapper;
+import com.orange.androidopenggltutorials.render.camera.CameraPreviewActivity;
 import com.orange.androidopenggltutorials.render.shape.ShapeActivity;
 
 /**
@@ -28,6 +30,13 @@ public class MainActivity extends AppCompatActivity {
          @Override
          public void onClick(View v) {
             startActivity(new Intent(MainActivity.this, ShapeActivity.class));
+         }
+      });
+
+      findViewById(R.id.btCamera).setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            startActivity(new Intent(MainActivity.this, CameraPreviewActivity.class));
          }
       });
    }
