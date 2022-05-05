@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Camera2Wrapper {
     private static final String TAG = "Camera2Wrapper";
-    private static final int DEFAULT_CAMERA_ID = 1;
+    private static final int DEFAULT_CAMERA_ID = 0;
     private final float THRESHOLD = 0.001f;
 
     private Camera2FrameCallback mCamera2FrameCallback;
@@ -97,6 +97,11 @@ public class Camera2Wrapper {
         initCamera2Wrapper();
     }
 
+    /**
+     * 指定surface 单纯的预览
+     * @param context 上下文
+     * @param surface surface
+     */
     public Camera2Wrapper(Context context,Surface surface) {
         mContext = context;
         mCamera2FrameCallback = (Camera2FrameCallback) context;

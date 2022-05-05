@@ -59,15 +59,6 @@ class CameraPreviewActivity : AppCompatActivity(),Camera2FrameCallback{
 
     override fun onResume() {
         super.onResume()
-        if (hasPermissionsGranted(REQUEST_PERMISSIONS)) {
-            mCamera2Wrapper!!.startCamera()
-        } else {
-            ActivityCompat.requestPermissions(
-                this,
-                REQUEST_PERMISSIONS,
-                CAMERA_PERMISSION_REQUEST_CODE
-            )
-        }
     }
 
     override fun onRequestPermissionsResult(
@@ -111,8 +102,7 @@ class CameraPreviewActivity : AppCompatActivity(),Camera2FrameCallback{
     private fun hasPermissionsGranted(permissions: Array<String>): Boolean {
         for (permission in permissions) {
             if (ActivityCompat.checkSelfPermission(this, permission)
-                != PackageManager.PERMISSION_GRANTED
-            ) {
+                != PackageManager.PERMISSION_GRANTED) {
                 return false
             }
         }
