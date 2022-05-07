@@ -6,22 +6,32 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.ImageFormat;
 import android.graphics.SurfaceTexture;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
+import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CameraManager;
 import android.hardware.camera2.CaptureRequest;
+import android.hardware.camera2.params.StreamConfigurationMap;
+import android.media.Image;
+import android.media.ImageReader;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.Looper;
 import android.util.Log;
+import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
 import android.widget.Toast;
 
 import com.orange.androidopenggltutorials.R;
 
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,16 +51,26 @@ public class PreviewTestActivity extends AppCompatActivity {
     private CameraCaptureSession mCameraCaptureSession;
 
     private int DEFAULT_CAMERA_ID = 0;
+
     private Handler mHandler;
+    private ImageReader mPreviewReader;
+    /**用来产生一个handler，在线程里处理摄像头的内容；**/
+    private HandlerThread mBackgroundThread;
+    private Size previewSize;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preview_test);
 
-        mHandler = new Handler(Looper.getMainLooper());
+        initHandler();
         initView();
-        cameraInit();
+    }
+
+    private void initHandler() {
+        mBackgroundThread = new HandlerThread("MyCamera2");
+        mBackgroundThread.start();
+        mHandler = new Handler(mBackgroundThread.getLooper());
     }
 
     private void initView() {
@@ -58,27 +78,67 @@ public class PreviewTestActivity extends AppCompatActivity {
         mTextureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() {
             @Override
             public void onSurfaceTextureAvailable(@NonNull SurfaceTexture surface, int width, int height) {
-                try {
-                    if (ActivityCompat.checkSelfPermission(PreviewTestActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                        Toast.makeText(PreviewTestActivity.this,"no permission",Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    mCameraManager.openCamera(mCameraId, mStateCallback, mHandler);
-                } catch (CameraAccessException e) {
-                    e.printStackTrace();
-                }
+                openCamera(width,height);
             }
 
             @Override
-            public void onSurfaceTextureSizeChanged(@NonNull SurfaceTexture surface, int width, int height) { }
+            public void onSurfaceTextureSizeChanged(@NonNull SurfaceTexture surface, int width, int height) {
+            }
 
             @Override
             public boolean onSurfaceTextureDestroyed(@NonNull SurfaceTexture surface) {
-                return false; }
+                return false;
+            }
 
             @Override
-            public void onSurfaceTextureUpdated(@NonNull SurfaceTexture surface) { }
+            public void onSurfaceTextureUpdated(@NonNull SurfaceTexture surface) {
+            }
         });
+    }
+
+    private void openCamera(int width, int height) {
+        CameraManager cameraManager = (CameraManager) getSystemService(CAMERA_SERVICE);
+        try {
+            for (String cameraId : cameraManager.getCameraIdList()) {
+                //描述相机设备的属性类
+                CameraCharacteristics characteristics = cameraManager.getCameraCharacteristics(cameraId);
+                //获取是前置还是后置摄像头
+                Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
+                //使用后置摄像头
+                if (facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) {
+                    StreamConfigurationMap map = characteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+                    if (map != null) {
+                        previewSize = CameraUtil.getOptimalSize(map.getOutputSizes(SurfaceTexture.class), width, height);
+                        mCameraId = cameraId;
+                    }
+                }
+            }
+
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(PreviewTestActivity.this, "no permission", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            initImageReader();
+
+            cameraManager.openCamera(mCameraId, mStateCallback, mHandler);
+        } catch (CameraAccessException r) { }
+    }
+
+    private void initImageReader(){
+        mPreviewReader=ImageReader.newInstance(previewSize.getWidth(),previewSize.getHeight(), ImageFormat.JPEG,2);
+        mPreviewReader.setOnImageAvailableListener(new ImageReader.OnImageAvailableListener() {
+            @Override
+            public void onImageAvailable(ImageReader reader) {
+                Image image=reader.acquireLatestImage();
+                ByteBuffer byteBuffer=image.getPlanes()[0].getBuffer();
+                byte[]bytes=new byte[byteBuffer.remaining()];
+                byteBuffer.get(bytes);
+                Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+
+                image.close();
+            }
+        },mHandler);
     }
 
     private CameraDevice.StateCallback mStateCallback=new CameraDevice.StateCallback() {
@@ -86,13 +146,14 @@ public class PreviewTestActivity extends AppCompatActivity {
         public void onOpened(@NonNull CameraDevice camera) {
             mCameraDevice=camera;
 
-            SurfaceTexture surfaceTexture=mTextureView.getSurfaceTexture();
-            Surface surface=new Surface(surfaceTexture);
-
             try {
+                SurfaceTexture surfaceTexture=mTextureView.getSurfaceTexture();
+                Surface surface=new Surface(surfaceTexture);
                 mPreviewRequestBuilder=mCameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
                 mPreviewRequestBuilder.addTarget(surface);
-                mCameraDevice.createCaptureSession(Arrays.asList(surface),mSessionCallback,mHandler);
+                mPreviewRequestBuilder.addTarget(mPreviewReader.getSurface());
+
+                mCameraDevice.createCaptureSession(Arrays.asList(surface,mPreviewReader.getSurface()),mSessionCallback,mHandler);
             } catch (CameraAccessException e) {
                 e.printStackTrace();
             }
@@ -109,6 +170,7 @@ public class PreviewTestActivity extends AppCompatActivity {
         }
     };
 
+
     private CameraCaptureSession.StateCallback mSessionCallback=new CameraCaptureSession.StateCallback() {
         @Override
         public void onConfigured(@NonNull CameraCaptureSession session) {
@@ -124,18 +186,6 @@ public class PreviewTestActivity extends AppCompatActivity {
         public void onConfigureFailed(@NonNull CameraCaptureSession session) { }
     };
 
-    private void cameraInit(){
-        mCameraManager=(CameraManager) getSystemService(CAMERA_SERVICE);
-        try {
-            mCameraIDs=mCameraManager.getCameraIdList();
-            for (String id:mCameraIDs){
-                Log.d("czh","camera id:"+id);
-            }
-            mCameraId=String.valueOf(DEFAULT_CAMERA_ID);
-        } catch (CameraAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
     private boolean checkCameraIdSupport(String cameraId) {
         boolean isSupported = false;
@@ -146,4 +196,25 @@ public class PreviewTestActivity extends AppCompatActivity {
         }
         return isSupported;
     }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopHandlerThread();
+    }
+
+    private void stopHandlerThread() {
+        if (mBackgroundThread != null) {
+            mBackgroundThread.quitSafely();
+            try {
+                mBackgroundThread.join();
+                mBackgroundThread = null;
+                mHandler = null;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }
