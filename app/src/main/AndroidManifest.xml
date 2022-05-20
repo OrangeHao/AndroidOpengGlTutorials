@@ -15,6 +15,9 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
+                android:name=".render.camera.NativePreviewActivity"
+                android:exported="false" />
+        <activity
                 android:name=".render.camera.PreviewTestActivity"
                 android:exported="false" />
         <activity

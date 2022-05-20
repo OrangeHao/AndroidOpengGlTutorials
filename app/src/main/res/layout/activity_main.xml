@@ -29,9 +29,8 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:text="@string/type_vary"
-                    android:id="@+id/btVary" />
+                    android:text="Native预览"
+                    android:id="@+id/native_preview" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
