@@ -56,7 +56,11 @@ public:
 	}
 	void deleteP()
 	{
-		glDeleteProgram(ID);
+        if (ID){
+            glUseProgram(0);
+            glDeleteProgram(ID);
+            ID=0;
+        }
 	}
 	// utility uniform functions
 	// ------------------------------------------------------------------------

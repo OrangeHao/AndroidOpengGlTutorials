@@ -6,28 +6,36 @@
 #include "LogUtil.h"
 #include "ImageDef.h"
 
-class Preview: public BaseCourse{
 
-public:
-    Preview(){};
-    ~Preview(){};
+static const float VERTICES_COORS[] =
+        {
+                -1.f, 1.f,
+                -1.f, -1.f,
+                1.f, 1.f,
+                1.f, -1.f
+        };
 
-    void init(int width,int height) {
-        LOGD("Preview init");
-        char kVertexShader[] =
-                "#version 100\n"
-                "varying vec2 v_texcoord;\n"
-                "attribute vec4 position;\n"
-                "attribute vec2 texcoord;\n"
-                "uniform mat4 MVP;\n"
-                "void main() {\n"
-                "    v_texcoord = texcoord;\n"
-                "    gl_Position = MVP*position;\n"
-                "}";
+static const float TEXTURE_COORS[] =
+        {
+                0, 0,
+                0, 1,
+                1, 0,
+                1, 1
+        };
 
-        // Pixel shader, YUV420 to RGB conversion.
-        char kFragmentShader0[] =
-                "#version 100\n \
+const char kVertexShader[] =
+        "#version 100\n"
+        "varying vec2 v_texcoord;\n"
+        "attribute vec4 position;\n"
+        "attribute vec2 texcoord;\n"
+        "void main() {\n"
+        "    v_texcoord = texcoord;\n"
+        "    gl_Position = position;\n"
+        "}";
+
+// Pixel shader, YUV420 to RGB conversion.
+const char kFragmentShader0[] =
+        "#version 100\n \
                 precision highp float; \
                 varying vec2 v_texcoord;\
                 uniform lowp sampler2D s_textureY;\
@@ -47,13 +55,20 @@ public:
                 }";
 
 
+class Preview: public BaseCourse{
 
-        PreviewShader=Shader(kVertexShader,kFragmentShader0);
+public:
+    Preview(){};
+    ~Preview(){};
 
+
+
+    void init(int width,int height) {
+        LOGD("Preview init");
+
+        createProgram();
         glEnable(GL_DEPTH_TEST);
-
         //创建纹理
-
     };
 
     /**
@@ -104,8 +119,7 @@ public:
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, vWidth, vHeight, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE,
-                     NULL);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, vWidth, vHeight, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE,NULL);
         if (!m_VTextureId) {
             GLTools::CheckGLError("GLByteFlowRender::CreateTextures Create V texture");
             return false;
@@ -142,23 +156,54 @@ public:
         glTexImage2D(GL_TEXTURE_2D,0,GL_LUMINANCE,
                      (GLsizei)m_RenderFrame.width>>1,(GLsizei)m_RenderFrame.height>>1,
                      0,GL_LUMINANCE,GL_UNSIGNED_BYTE,m_RenderFrame.ppPlane[2]);
-
-
+        return true;
     }
+
+    /**
+     * 创建程序
+     */
+    int createProgram(){
+        mPreviewShader=Shader(kVertexShader,kFragmentShader0);
+        m_VertexCoorHandle = (GLuint) glGetAttribLocation(mPreviewShader.ID, "position");
+        m_TextureCoorHandle = (GLuint) glGetAttribLocation(mPreviewShader.ID, "texcoord");
+        return mPreviewShader.ID;
+    }
+
 
     /**
      * opengl流程相关的函数
      * @return
      */
     GLuint useProgram(){
+        if (!mPreviewShader.ID) {
+            LOGE("GLByteFlowRender::UseProgram Could not use program.");
+            return 0;
+        }
+        if (m_IsProgramChanged){
+            glUseProgram(mPreviewShader.ID);
+            GLTools::CheckGLError("GLByteFlowRender::UseProgram");
 
+            glVertexAttribPointer(m_VertexCoorHandle, 2, GL_FLOAT, GL_FALSE, 2 * 4, VERTICES_COORS);
+            glEnableVertexAttribArray(m_VertexCoorHandle);
+
+            mPreviewShader.setInt("s_textureY",0);
+            mPreviewShader.setInt("s_textureU",1);
+            mPreviewShader.setInt("s_textureV",2);
+
+            glVertexAttribPointer(m_TextureCoorHandle, 2, GL_FLOAT, GL_FALSE, 2 * 4, TEXTURE_COORS);
+            glEnableVertexAttribArray(m_TextureCoorHandle);
+
+            m_IsProgramChanged = false;
+        }
+
+        return mPreviewShader.ID;
     }
 
     /**
      * 绘制主函数
      */
     void drawFrame() {
-        LOGD("LightingCube drawFrame");
+        LOGD("preview drawFrame");
         glViewport(0, 0, m_ViewportWidth, m_ViewportHeight);
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -172,6 +217,44 @@ public:
     };
 
 
+    /**
+     * 更新帧数据
+     * @param pImage
+     */
+    void updateFrame(NativeImage *pImage){
+        if (pImage == nullptr) {
+            return;
+        }
+        if (pImage->width!=m_RenderFrame.width || pImage->height!=m_RenderFrame.height){
+            if (m_RenderFrame.ppPlane[0]!=NULL){
+                NativeImageUtil::FreeNativeImage(&m_RenderFrame);
+            }
+            //将m_RenderFrame后面的内存初始化为0
+            memset(&m_RenderFrame,0,sizeof(NativeImage));
+            m_RenderFrame.width = pImage->width;
+            m_RenderFrame.height = pImage->height;
+            m_RenderFrame.format = pImage->format;
+            NativeImageUtil::AllocNativeImage(&m_RenderFrame);
+        }
+
+        NativeImageUtil::CopyNativeImage(pImage, &m_RenderFrame);
+    }
+
+    void onSurfaceCreate(){
+        LOGD("preview onSurfaceCreate");
+        if (!createProgram()) {
+            LOGE("GLByteFlowRender::OnSurfaceCreated create program fail.");
+        }
+    }
+
+    void onSurfaceChange(int width, int height){
+        LOGD("preview onSurfaceChange");
+        m_ViewportWidth = width;
+        m_ViewportHeight = height;
+        m_IsProgramChanged = true;
+    }
+
+
 
     void destroy() {
         LOGD("Preview destroy");
@@ -180,9 +263,12 @@ public:
 
 private:
 
-    Shader PreviewShader;
+    Shader mPreviewShader;
 
+    GLuint m_VertexCoorHandle;
+    GLuint m_TextureCoorHandle;
 
+    volatile bool   m_IsProgramChanged;
     size_t          m_ViewportWidth;
     size_t          m_ViewportHeight;
     NativeImage     m_RenderFrame;
