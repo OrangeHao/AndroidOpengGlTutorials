@@ -3,6 +3,7 @@ package com.orange.androidopenggltutorials.render.camera;
 import android.graphics.ImageFormat;
 import android.graphics.Point;
 import android.media.Image;
+import android.util.Log;
 import android.util.Size;
 
 import java.nio.ByteBuffer;
@@ -81,6 +82,11 @@ public class CameraUtil {
             // Experimentally, U and V planes have |pixelStride| = 2, which
             // essentially means they are packed.
             final int pixelStride = planes[plane].getPixelStride();
+            if (rowStride==0 || pixelStride==0){
+                continue;
+            }
+            Log.d("czh","rowStride:"+rowStride+"  pixelStride:"+pixelStride);
+
             final int planeWidth = (plane == 0) ? imageWidth : imageWidth / 2;
             final int planeHeight = (plane == 0) ? imageHeight : imageHeight / 2;
             if (pixelStride == 1 && rowStride == planeWidth) {

@@ -1,15 +1,13 @@
 
 
 #include <jni.h>
-#include "SimpleTriangle.h"
 #include "CourseManager.h"
 #include "BaseCourse.h"
 #include "LogUtil.h"
+#include "CameraManager.h"
 
 
 #define NATIVE_CLASS_NAME "com/orange/androidopenggltutorials/render/shape/NativeLib"
-
-BaseCourse* simpleTriangle;
 
 
 #ifdef __cplusplus
@@ -31,20 +29,41 @@ native_drawCourseFrame(JNIEnv *env, jobject instance){
     CourseManager::getInstance()->drawFrame();
 }
 
+/****************** camera *********************/
 
-//JNIEXPORT void JNICALL
-//SHAPEJAVAPATH(init)(JNIEnv *env, jclass type, jint width, jint height) {
-////    simpleTriangle=new SimpleTriangle();
-////    simpleTriangle->init();
-//    CourseManager::getInstance()->initCourse();
-//}
-//
-//
-//JNIEXPORT void JNICALL
-//SHAPEJAVAPATH(step)(JNIEnv *env, jclass type) {
-////    simpleTriangle->drawFrame();
-//    CourseManager::getInstance()->drawFrame();
-//}
+JNIEXPORT void JNICALL
+native_camera_Init(JNIEnv *env, jobject instance)
+{
+    CameraManager::getInstance()->init();
+}
+
+
+JNIEXPORT void JNICALL
+native_camera_OnSurfaceChanged(JNIEnv *env, jobject instance, jint width, jint height)
+{
+    CameraManager::getInstance()->onSurfaceChanged(width,height);
+}
+
+JNIEXPORT void JNICALL
+native_camera_UpdateFrame(JNIEnv *env, jobject instance, jint format, jbyteArray bytes, jint width, jint height)
+{
+    int len=env->GetArrayLength(bytes);
+    unsigned char* buf=new unsigned char [len];
+    env->GetByteArrayRegion(bytes,0,len,reinterpret_cast<jbyte*>(buf));
+
+    CameraManager::getInstance()->UpdateFrame(format,buf,width,height);
+    delete[] buf;
+}
+
+
+JNIEXPORT void JNICALL
+native_camera_OnDrawFrame(JNIEnv *env, jobject instance)
+{
+    CameraManager::getInstance()->onDrawFrame();
+}
+
+/****************** camera *********************/
+
 
 
 
@@ -86,16 +105,20 @@ static void UnregisterNativeMethods(JNIEnv *env, const char *className)
 }
 
 static JNINativeMethod courseMethods[]={
-        {"native_setCourseById",    "(I)V",     (void *)(native_setCourseById)},
-        {"native_initCourse",       "(II)V",      (void *)(native_initCourse)},
-        {"native_drawCourseFrame",  "()V",      (void *)(native_drawCourseFrame)}
+        {"native_setCourseById",                "(I)V",          (void *)(native_setCourseById)},
+        {"native_initCourse",                   "(II)V",         (void *)(native_initCourse)},
+        {"native_drawCourseFrame",              "()V",           (void *)(native_drawCourseFrame)},
+        {"native_camera_Init",                  "()V",           (void *)(native_camera_Init)},
+        {"native_camera_OnSurfaceChanged",     "(II)V",         (void *)(native_camera_OnSurfaceChanged)},
+        {"native_camera_UpdateFrame",          "(I[BII)V",      (void *)(native_camera_UpdateFrame)},
+        {"native_camera_OnDrawFrame",          "()V",           (void *)(native_camera_OnDrawFrame)}
 };
 
 
 //重载onLoad方法
 extern "C" jint JNI_OnLoad(JavaVM *jvm, void *reserved)
 {
-    LOGE("======JNI_OnLoad=======");
+    LOGD("======JNI_OnLoad=======");
     JNIEnv *env= NULL;
     if (jvm->GetEnv((void **)(&env),JNI_VERSION_1_6)!=JNI_OK){
         return JNI_ERR;
@@ -108,13 +131,13 @@ extern "C" jint JNI_OnLoad(JavaVM *jvm, void *reserved)
         return JNI_ERR;
     }
 
-    LOGE("register methods succeed");
+    LOGD("register methods succeed");
     return JNI_VERSION_1_6;
 }
 
 extern "C" void JNI_OnUnload(JavaVM *jvm, void *reserved)
 {
-    LOGE("======JNI_OnUnload=======");
+    LOGD("======JNI_OnUnload=======");
     JNIEnv *env= NULL;
     if (jvm->GetEnv((void **)(&env),JNI_VERSION_1_6)!=JNI_OK){
         return;
@@ -122,6 +145,6 @@ extern "C" void JNI_OnUnload(JavaVM *jvm, void *reserved)
 
     UnregisterNativeMethods(env,NATIVE_CLASS_NAME);
 
-    LOGE("unregister methods succeed");
+    LOGD("unregister methods succeed");
 
 }

@@ -17,4 +17,12 @@ public class NativeLib {
     public static native void native_initCourse(int width,int height);
     public static native void native_drawCourseFrame();
 
+
+    /************************** 摄像头预览相关 **************************/
+    public static native void native_camera_Init();
+    public static native void native_camera_OnSurfaceChanged(int width, int height);
+    public static native void native_camera_UpdateFrame(int format, byte[] data, int width, int height);
+    public static native void native_camera_OnDrawFrame();
+
+
 }

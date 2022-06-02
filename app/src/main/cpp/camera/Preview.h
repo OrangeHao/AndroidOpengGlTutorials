@@ -55,21 +55,40 @@ const char kFragmentShader0[] =
                 }";
 
 
-class Preview: public BaseCourse{
+class Preview{
 
 public:
-    Preview(){};
+    Preview(): m_YTextureId(0),
+               m_UTextureId(0),
+               m_VTextureId(0),
+               m_ViewportHeight(0),
+               m_ViewportWidth(0),
+               m_VertexCoorHandle(0),
+               m_TextureCoorHandle(0){
+        m_IsProgramChanged= false;
+        memset(&m_RenderFrame, 0, sizeof(NativeImage));
+    };
     ~Preview(){};
 
 
 
-    void init(int width,int height) {
+    /**
+     * surface create的时候调用
+     * @param width
+     * @param height
+     */
+    void init() {
         LOGD("Preview init");
 
         createProgram();
         glEnable(GL_DEPTH_TEST);
         //创建纹理
     };
+
+    void unInit(){
+        LOGD("Preview unInit");
+        NativeImageUtil::FreeNativeImage(&m_RenderFrame);
+    }
 
     /**
      * 创建纹理单元
@@ -124,6 +143,7 @@ public:
             GLTools::CheckGLError("GLByteFlowRender::CreateTextures Create V texture");
             return false;
         }
+        return true;
     }
 
     /**
@@ -240,12 +260,12 @@ public:
         NativeImageUtil::CopyNativeImage(pImage, &m_RenderFrame);
     }
 
-    void onSurfaceCreate(){
-        LOGD("preview onSurfaceCreate");
-        if (!createProgram()) {
-            LOGE("GLByteFlowRender::OnSurfaceCreated create program fail.");
-        }
-    }
+//    void onSurfaceCreate(){
+//        LOGD("preview onSurfaceCreate");
+//        if (!createProgram()) {
+//            LOGE("GLByteFlowRender::OnSurfaceCreated create program fail.");
+//        }
+//    }
 
     void onSurfaceChange(int width, int height){
         LOGD("preview onSurfaceChange");

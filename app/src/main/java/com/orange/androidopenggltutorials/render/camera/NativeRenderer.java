@@ -50,26 +50,26 @@ class NativeRenderer implements GLSurfaceView.Renderer {
      */
     public void setRenderFrame(int format, byte[] data, int width, int height) {
         Log.d("czh", "setRenderFrame() called with: data = [" + data + "], width = [" + width + "], height = [" + height + "]");
-
+        NativeLib.native_camera_UpdateFrame(format,data,width,height);
     }
 
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         GLES31.glClearColor(0.5f,0.5f,0.5f,1.0f);
+        NativeLib.native_camera_Init();
     }
 
     @Override
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-        GLES31.glViewport(0,0,width,height);
-        NativeLib.native_setCourseById(2);
-        NativeLib.native_initCourse(width,height);
+//        GLES31.glViewport(0,0,width,height);
+        NativeLib.native_camera_OnSurfaceChanged(width,height);
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
-        GLES31.glClear(GLES31.GL_COLOR_BUFFER_BIT| GLES31.GL_DEPTH_BUFFER_BIT);
-        NativeLib.native_drawCourseFrame();
+//        GLES31.glClear(GLES31.GL_COLOR_BUFFER_BIT| GLES31.GL_DEPTH_BUFFER_BIT);
+        NativeLib.native_camera_OnDrawFrame();
     }
 
 }

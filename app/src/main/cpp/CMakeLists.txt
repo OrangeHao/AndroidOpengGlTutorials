@@ -3,22 +3,22 @@ cmake_minimum_required(VERSION 3.4.1)
 
 #告诉编译器做关联：包下的头文件
 include_directories(
-        camera
         course
         main
         third
         third/glm
         shape
         utils
+        camera
 )
 
 file(GLOB src-files
-        ${CMAKE_SOURCE_DIR}/camera/*.cpp
         ${CMAKE_SOURCE_DIR}/*.cpp
         ${CMAKE_SOURCE_DIR}/course/*.cpp
         ${CMAKE_SOURCE_DIR}/main/*.cpp
         ${CMAKE_SOURCE_DIR}/shape/*.cpp
         ${CMAKE_SOURCE_DIR}/utils/*.cpp
+        ${CMAKE_SOURCE_DIR}/camera/*.cpp
         )
 
 add_library(
