@@ -24,17 +24,20 @@
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/type_texture"
+                    android:text="PreviewTestActivity"
+                    android:textAllCaps="false"
                     android:id="@+id/btTexture" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Native预览"
+                    android:textAllCaps="false"
+                    android:text="Native预览 NativePreviewActivity"
                     android:id="@+id/native_preview" />
             <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/type_camera"
+                    android:text="CameraPreviewActivity"
+                    android:textAllCaps="false"
                     android:id="@+id/btCamera" />
             <Button
                     android:layout_width="match_parent"
@@ -64,8 +67,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
-                    android:text="@string/type_obj2"
-                    android:id="@+id/btObj2"/>
+                    android:text="手动绘制"
+                    android:id="@+id/drawFrame"/>
 
         </LinearLayout>
 

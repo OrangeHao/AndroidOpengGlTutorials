@@ -82,10 +82,11 @@ public class CameraUtil {
             // Experimentally, U and V planes have |pixelStride| = 2, which
             // essentially means they are packed.
             final int pixelStride = planes[plane].getPixelStride();
+            Log.d("czh","rowStride:"+rowStride+"  pixelStride:"+pixelStride);
             if (rowStride==0 || pixelStride==0){
                 continue;
             }
-            Log.d("czh","rowStride:"+rowStride+"  pixelStride:"+pixelStride);
+
 
             final int planeWidth = (plane == 0) ? imageWidth : imageWidth / 2;
             final int planeHeight = (plane == 0) ? imageHeight : imageHeight / 2;

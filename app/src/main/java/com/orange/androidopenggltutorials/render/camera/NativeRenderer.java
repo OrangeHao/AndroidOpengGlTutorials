@@ -49,7 +49,7 @@ class NativeRenderer implements GLSurfaceView.Renderer {
      * @param height 图像长度
      */
     public void setRenderFrame(int format, byte[] data, int width, int height) {
-        Log.d("czh", "setRenderFrame() called with: data = [" + data + "], width = [" + width + "], height = [" + height + "]");
+        Log.d("czh", "setRenderFrame() called with: data = [" + data.length + "], width = [" + width + "], height = [" + height + "]");
         NativeLib.native_camera_UpdateFrame(format,data,width,height);
     }
 

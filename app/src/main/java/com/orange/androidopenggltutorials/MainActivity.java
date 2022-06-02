@@ -11,6 +11,7 @@ import com.orange.androidopenggltutorials.render.camera.Camera2Wrapper;
 import com.orange.androidopenggltutorials.render.camera.CameraPreviewActivity;
 import com.orange.androidopenggltutorials.render.camera.NativePreviewActivity;
 import com.orange.androidopenggltutorials.render.camera.PreviewTestActivity;
+import com.orange.androidopenggltutorials.render.shape.NativeLib;
 import com.orange.androidopenggltutorials.render.shape.ShapeActivity;
 
 /**
@@ -55,5 +56,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, NativePreviewActivity.class));
          }
       });
+
+
    }
 }

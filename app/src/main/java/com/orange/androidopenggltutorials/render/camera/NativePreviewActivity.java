@@ -28,11 +28,13 @@ import android.util.Log;
 import android.util.Size;
 import android.view.Surface;
 import android.view.TextureView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.orange.androidopenggltutorials.R;
+import com.orange.androidopenggltutorials.render.shape.NativeLib;
 
 import java.nio.ByteBuffer;
 import java.util.Arrays;
@@ -106,6 +108,7 @@ public class NativePreviewActivity extends AppCompatActivity {
         } else {
             ActivityCompat.requestPermissions(this, REQUEST_PERMISSIONS, CAMERA_PERMISSION_REQUEST_CODE);
         }
+
     }
 
 

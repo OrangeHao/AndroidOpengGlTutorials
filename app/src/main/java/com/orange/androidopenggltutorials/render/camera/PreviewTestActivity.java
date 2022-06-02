@@ -138,8 +138,10 @@ public class PreviewTestActivity extends AppCompatActivity {
                 byte[]bytes=new byte[byteBuffer.remaining()];
                 byteBuffer.get(bytes);
                 Log.d("czh","image data:"+bytes.length);
-//                Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
-//                mOnImageGetListener.newImage(bitmap);
+                Bitmap bitmap= BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+                mOnImageGetListener.newImage(bitmap);
+
+
 
                 image.close();
             }

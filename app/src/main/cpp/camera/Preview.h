@@ -152,10 +152,12 @@ public:
      */
     bool updateTextures(){
         if (m_RenderFrame.ppPlane[0] == NULL) {
+            LOGE("m_RenderFrame.ppPlane[0] == NULL");
             return false;
         }
 
         if (!m_YTextureId && !m_UTextureId && !m_VTextureId && !createTextures()) {
+            LOGE("createTextures failed.");
             return false;
         }
 
