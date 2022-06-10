@@ -4,7 +4,9 @@
 #include "SimpleCube.h"
 #include "LightingCube.h"
 #include "TextureCube.h"
+#include "YuvPictureCase.h"
 #include "LogUtil.h"
+
 
 CourseManager *CourseManager::m_instance= nullptr;
 
